@@ -26,3 +26,24 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+Models:
+* Job
+	* Title
+	* Company (F-key)
+	* (Skill tags)
+	* Description
+	* Begin date
+	* End date
+
+* Company
+	* Name
+	* Logo
+	* Website
+	* Sponsored
+
+* User
+	* Name
+	* Admin
+	* Allowed companies
