@@ -1,0 +1,1 @@
+Jobboard::Application.config.secret_key_base = '917f5a3b3aecba4c5e5cb1cb0399d8a0e3272afa08ad8ef4e82325b09f4e644f884a01e27eea78159c65b74b42c5510cc23cd567a31316abe7f1a84f23ac1752'
