@@ -1,4 +1,4 @@
-var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'wu.masonry', 'config']);
+var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'config']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
@@ -24,8 +24,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
       controller: 'JobsCtrl',
       resolve: {
         jobPromise: ['$stateParams', 'jobService', 'jobs', function($stateParams, jobService, jobs) {
-
-          console.log($stateParams.jobId);
           jobs.getOne($stateParams.jobId).then(function(data) {
             jobService.setJob(data.data);
           });
