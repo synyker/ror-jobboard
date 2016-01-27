@@ -1,0 +1,17 @@
+{
+  "name": "ror-jobboard-frontend",
+  "version": "1.0.0",
+  "author": "Jonne Airaksinen",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.7.2",
+    "express": "^4.13.3",
+    "grunt": "^0.4.5",
+    "grunt-bower-concat": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-ng-constant": "^2.0.0"
+  }
+}

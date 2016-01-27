@@ -1,0 +1,159 @@
+body {
+  background-color: #141414;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.title-container {
+    width: 90%;
+    margin: 6rem auto 0;
+    background-color: #fafafa;
+    padding-top: 1rem;
+    border-radius: 5px 5px 0 0;
+
+    .title {
+
+      h1 {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        font-size: 3.8rem;
+        color: #1a1a1a;
+        font-weight: 600;
+        text-shadow: -0.4px -0.4px 0 #000, 0.4px -0.4px 0 #000, -0.4px 0.4px 0 #000, 0.4px 0.4px 0 #000;
+        text-shadow: 0px 0px 5px rgba(80, 80, 80, 0.8);
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      .title {
+        width: calc(100% - 190px) !important;
+        h1 {
+          padding-left: 0rem;
+        }
+      }
+
+      .logo-container {
+        width: 190px !important;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .title {
+        h1 {
+          text-align: center;
+          padding: 0 1rem;
+        }
+      }
+      .logo-container .logo {
+        margin: 0 auto 1rem;
+        display: block;
+      }
+    }
+
+
+    .logo-container {
+      margin-top: -6rem;
+      .logo {
+        width: 160px;
+        top: 7px;
+        left: 120px;
+        z-index: 100;
+      }
+    }
+}
+
+.jobs-container {
+  width: 90%;
+  margin: 0 auto 6rem;
+  background-color: #fafafa;
+  padding: 3rem 2rem;
+  border-radius: 0 0 5px 5px;
+
+  input.job-filter {
+    &:focus {
+      border-bottom: 1px solid #f08c00;
+      box-shadow: 0 1px 0 0 #f08c00;
+    }
+  }
+  .job {
+    display: block;
+    background-color: #fff;
+    border: 5px solid #ffd966;
+    box-shadow: 0 -3px 5px 0px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 -3px 15px 5px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    outline: 1px solid rgba(50, 50, 50, 0.5);
+
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: rgba(255, 217, 102, 0.1);
+      background-color: #f3f3f3;
+    }
+
+    .logo-container {
+      img {
+        max-width: 70%;
+        display: block;
+        margin: 1rem auto 0;
+        max-height: 80px;
+      }
+    }
+    .company-name, .job-title {
+      color: #f08c00;
+      font-weight: 400;
+      line-height: 30px;
+      margin: 1rem 0.5rem 0
+    }
+
+    .job-title {
+      margin-top: 0;
+    }
+
+    .job-end {
+      font-size: 0.9rem;
+      color: #afafaf;
+      margin: 0.5rem 0.5rem 0;
+    }
+
+    .card-action {
+      .company-url {
+
+      }
+      .job-tag {
+        background-color: #f08c00;
+        color: white;
+        margin: 0 0.5rem;
+        padding: 8px 10px;
+        border: 1px solid rgba(50, 50, 50, 0.8);
+        border-radius: 6px;
+        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        transition: background-color .3s, color .3s;
+        &:hover {
+          background-color: rgba(240, 140, 0, 0.8);
+          color: #1a1a1a;
+        }
+      }
+    }
+
+    &.inactive {
+      border-color: #afafaf;
+      &:hover {
+        background-color: #f3f3f3;
+      }
+      .card-title {
+        color: #afafaf;
+      }
+    }
+  }
+
+  .overlap {
+    width: 100%;
+    border-top: 10px solid #ffcc33;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-bottom: 1rem;
+  }
+}
