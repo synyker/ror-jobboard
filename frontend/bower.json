@@ -18,11 +18,12 @@
   ],
   "dependencies": {
     "angular": "~1.4.8",
-    "angular-ui-router": "~0.2.15",
     "materialize": "~0.97.5",
     "moment": "~2.11.1",
     "lodash": "~4.0.0",
-    "angular-moment": "~0.10.3"
+    "angular-moment": "~0.10.3",
+    "angular-masonry": "~0.15.0",
+    "angular-ui-router": "~0.2.17"
   },
   "resolutions": {
     "moment": ">=2.8.0 <2.11.0"

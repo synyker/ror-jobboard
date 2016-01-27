@@ -1,4 +1,4 @@
-var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'config']);
+var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'wu.masonry', 'config']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
@@ -10,7 +10,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
   $stateProvider
     .state('list', {
       url: '/',
-      templateUrl: 'views/list.html',
+      templateUrl: '/views/list.html',
       controller: 'JobsCtrl',
       resolve: {
         jobsPromise: ['jobs', function(jobs) {
@@ -18,22 +18,21 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
         }]
       }
     })
-    .state('list.single', {
+    .state('single', {
       url: '/jobs/:jobId',
-      templateUrl: 'views/list.html',
-      // controller: function($scope, $stateParams) {
-      //   console.log($stateParams.jobId);
-      // },
-      //controller: 'JobsCtrl',
-      // resolve: {
-      //   jobPromise: ['$stateParams', 'jobService', 'jobs', function($stateParams, jobService, jobs) {
-      //     // jobs.getOne($stateParams.jobId).then(function(data) {
-      //     //   jobService.setJob(data.data);
-      //     // });
-      //
-      //     return jobs.getAll($stateParams.jobId);
-      //   }]
-      // }
+      templateUrl: '/views/list.html',
+      controller: 'JobsCtrl',
+      resolve: {
+        jobPromise: ['$stateParams', 'jobService', 'jobs', function($stateParams, jobService, jobs) {
+
+          console.log($stateParams.jobId);
+          jobs.getOne($stateParams.jobId).then(function(data) {
+            jobService.setJob(data.data);
+          });
+
+          return jobs.getAll();
+        }]
+      }
     })
     .state('404', {
       url: '/404',
