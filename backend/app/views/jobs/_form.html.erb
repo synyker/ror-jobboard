@@ -16,9 +16,9 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :company_id %><br>
-    <%= f.number_field :company_id %>
+    <%= f.select :company_id, options_from_collection_for_select(@companies, :id, :name) %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
@@ -29,7 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :end %><br>
-    <%= f.date_select :end %>
+    <%= f.date_select :end, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list %><br>
+    <%= f.text_field :tag_list %>
   </div>
   <div class="actions">
     <%= f.submit %>

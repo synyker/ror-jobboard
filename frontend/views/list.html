@@ -2,7 +2,11 @@
 
   <div class="row" ng-if="selectedJob">
     <div class="col s12">
-      <div class="card job" ng-class="{ 'inactive' : isActive(selectedJob) }">
+      <div class="card job single" ng-class="{ 'inactive' : isActive(selectedJob) }">
+
+        <div class="close-container" ng-click="clearActiveJob()">
+          <i class="material-icons">close</i>
+        </div>
 
         <div class="row no-margin">
           <div class="col l8">
@@ -23,44 +27,47 @@
           <a class="company-url" href="#" class="black-text">{{ selectedJob.company.website }}</a>
           <a href="#"></a>
         </div>
-        <div class="card-action" ng-if="selectedJob.tags.length > 0">
-          <span class="job-tag button waves-effect" ng-click="setFilterTag(tag.name)" ng-repeat="tag in selectedJob.tags">{{ tag.name }}</span>
+        <div class="card-action job-tags" ng-if="selectedJob.tags.length > 0">
+          <span class="job-tag chip button waves-effect" ng-click="setFilterTag(tag.name)" ng-repeat="tag in selectedJob.tags">{{ tag.name }}</span>
         </div>
       </div>
     </div>
   </div>
 
-  <input type="text" class="z-depth-2 job-filter" ng-model="filterJob" placeholder="Type to filter jobs by tags, company name, job title (comma separated)">
+  <div>
+    <input type="text" class="z-depth-2 job-filter" ng-model="filterJob" placeholder="Type to filter jobs by tags, company name, job title (comma separated)">
 
-  <div class="row">
-    <div class="col s12 l6" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-company.sponsored', '-end']" ng-show="selectedJob.id !== job.id">
+    <div class="row" masonry>
+      <div class="col s12 l6 masonry-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-company.sponsored', '-end']" ng-show="selectedJob.id !== job.id">
 
-      <div class="card job waves-effect" ng-class="{ 'inactive' : isActive(job) }" ng-click="setActiveJob(job)">
+        <div class="card job" ng-class="{ 'inactive' : isActive(job) }" ng-click="setActiveJob(job)">
 
-        <div class="row no-margin">
-          <div class="col l8">
-            <p class="card-title company-name">{{ job.company.name}}</p>
-            <p class="card-title job-title">{{ job.title }}</p>
-            <p class="job-end" ng-if="job.end">Haku auki <span>{{ job.end | amDateFormat:'DD.MM.YYYY' }}</span> asti</p>
+          <div class="row no-margin">
+            <div class="col l8">
+              <p class="card-title company-name">{{ job.company.name}}</p>
+              <p class="card-title job-title">{{ job.title }}</p>
+              <p class="job-end" ng-if="job.end">Haku auki <span>{{ job.end | amDateFormat:'DD.MM.YYYY' }}</span> asti</p>
+              <p class="job-end" ng-if="!job.end">Haku auki toistaiseksi</p>
+            </div>
+            <div class="col m4 logo-container">
+              <img ng-if="job.company.logo" src="/images/{{ job.company.logo }}" />
+            </div>
           </div>
-          <div class="col m4 logo-container">
-            <img ng-if="job.company.logo" src="/images/{{ job.company.logo }}" />
+
+          <div class="card-content black-text" ng-if="true == false">
+
+            <p>{{ job.description }}</p>
+          </div>
+          <div class="card-action" ng-if="true == false">
+            <a class="company-url" href="{{ job.company.website }}" target="_blank" class="black-text" ng-click="$event.stopPropagation();">{{ job.company.website }}</a>
+            <a href="#"></a>
+          </div>
+          <div class="card-action job-tags">
+            <span class="job-tag chip button waves-effect" ng-click="setFilterTag(tag.name); $event.stopPropagation();" ng-repeat="tag in job.tags">{{ tag.name }}</span>
           </div>
         </div>
 
-        <div class="card-content black-text">
-
-          <p>{{ job.description }}</p>
-        </div>
-        <div class="card-action">
-          <a class="company-url" href="#" class="black-text">{{ job.company.website }}</a>
-          <a href="#"></a>
-        </div>
-        <div class="card-action" ng-if="job.tags.length > 0">
-          <span class="job-tag button waves-effect" ng-click="setFilterTag(tag.name); $event.stopPropagation();" ng-repeat="tag in job.tags">{{ tag.name }}</span>
-        </div>
       </div>
-
     </div>
   </div>
 

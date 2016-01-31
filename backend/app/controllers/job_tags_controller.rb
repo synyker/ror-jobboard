@@ -1,6 +1,8 @@
 class JobTagsController < ApplicationController
   before_action :set_job_tag, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorize, :except => ['index', 'show']
+
   # GET /job_tags
   # GET /job_tags.json
   def index

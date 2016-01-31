@@ -12,9 +12,16 @@ function($scope, $location, jobs, jobService) {
     $scope.selectedJob = jobService.getJob();
   });
 
+  $scope.clearActiveJob = function() {
+    $location.path('/');
+    jobService.clearJob();
+    console.log($scope.filterJob);
+  }
+
   $scope.setActiveJob = function(job) {
     $location.path('/jobs/' + job.id);
     jobService.setJob(job);
+    $("body").animate({ scrollTop: 0 }, "fast");
   }
 
   $scope.isActive = function(job) {

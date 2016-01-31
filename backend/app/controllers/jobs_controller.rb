@@ -1,5 +1,8 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_companies_for_template, only: [:new, :edit]
+
+  before_filter :authorize, :except => ['index', 'show']
 
   # GET /jobs
   # GET /jobs.json
@@ -24,10 +27,25 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
+    params.permit(:tag_list)
     @job = Job.new(job_params)
+
+
 
     respond_to do |format|
       if @job.save
+
+        tag_names = params[:job][:tag_list].split(/,\s+/)
+        tag_names.each { |name|
+          tag = Tag.find_or_create_by(name: name.strip)
+
+          puts 'TAGIN TIEDOT'
+          puts @job.id
+          puts tag.id
+
+          JobTag.create(:job_id => @job.id, :tag_id => tag.id)
+        }
+
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
@@ -65,6 +83,10 @@ class JobsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job = Job.find(params[:id])
+    end
+
+    def set_companies_for_template
+      @companies = Company.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

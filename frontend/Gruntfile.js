@@ -31,7 +31,7 @@ module.exports = function(grunt) {
           dest: 'src/config.js'
         },
         constants: {
-            api: 'http://protected-hamlet-3221.herokuapp.com'
+            api: 'http://guarded-woodland-53389.herokuapp.com'
         }
       }
     },
@@ -54,7 +54,18 @@ module.exports = function(grunt) {
         cssDest: 'build/_bower.css',
         bowerOptions: {
           relative: false
-        }
+        },
+        exclude: [
+          'angular-masonry',
+          'jquery-bridget',
+          'desandro-matches-selector',
+          'ev-emitter',
+          'fizzy-ui-utils',
+          'get-size',
+          'imagesloaded',
+          'masonry',
+          'outlayer'
+        ]
       }
     },
     build: {
@@ -79,5 +90,5 @@ module.exports = function(grunt) {
   grunt.registerTask('build',['sass', 'ngconstant:development', 'concat', 'bower_concat']);
   grunt.registerTask('production',['sass', 'ngconstant:production', 'concat', 'bower_concat']);
   grunt.registerTask('heroku', ['production']);
-  
+
 }
