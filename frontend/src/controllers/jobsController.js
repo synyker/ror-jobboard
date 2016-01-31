@@ -21,8 +21,11 @@ function($scope, $location, $sce, jobs, jobService) {
 
   $scope.setActiveJob = function(job) {
     $location.path('/jobs/' + job.id);
+
+    $("body").animate({ scrollTop: 100 }, "fast");
+
     jobService.setJob(job);
-    $("body").animate({ scrollTop: 0 }, "fast");
+
   }
 
   $scope.isActive = function(job) {

@@ -1,6 +1,6 @@
 <div class="jobs-container">
 
-  <div class="row" ng-if="selectedJob">
+  <div class="row" ng-if="selectedJob" id="selected-job-container">
     <div class="col s12">
       <div class="card job single" ng-class="{ 'inactive' : isActive(selectedJob) }">
 
@@ -38,7 +38,7 @@
     <input type="text" class="z-depth-2 job-filter" ng-model="filterJob" placeholder="Type to filter jobs by tags, company name, job title (comma separated)">
 
     <div class="row job-grid">
-      <div class="col s12 job-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-company.sponsored', '-end']" ng-show="selectedJob.id !== job.id">
+      <div class="col s12 job-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-end', '-company.sponsored']" ng-show="selectedJob.id !== job.id">
 
         <div class="card job" ng-class="{ 'inactive' : isActive(job) }" ng-click="setActiveJob(job)">
 

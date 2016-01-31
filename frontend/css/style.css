@@ -1,5 +1,6 @@
 html, body {
-  background-color: #141414; }
+  background-color: #141414;
+  background-color: #fafafa; }
 
 .no-margin {
   margin: 0; }
@@ -12,9 +13,7 @@ html, body {
     padding: 3rem 0.5rem !important;
     width: 97% !important; } }
 .title-container {
-  width: 90%;
-  margin: 6rem auto 0;
-  background-color: #fafafa;
+  width: 100%;
   padding-top: 1rem;
   border-radius: 5px 5px 0 0; }
   .title-container .title h1 {
@@ -40,8 +39,21 @@ html, body {
     .title-container .logo-container .logo {
       margin: 0 auto 1rem;
       display: block; } }
+  .title-container .stripe-container {
+    position: absolute;
+    opacity: 0.7;
+    width: 100%;
+    height: 100px;
+    top: 40px; }
+    .title-container .stripe-container .stripe {
+      display: block;
+      height: 50px;
+      width: 100%; }
+      .title-container .stripe-container .stripe.black {
+        background-color: black; }
   .title-container .logo-container {
-    margin-top: -6rem; }
+    position: relative;
+    margin: 0 auto; }
     .title-container .logo-container .logo {
       width: 160px;
       top: 7px;
