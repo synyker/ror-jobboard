@@ -8,6 +8,15 @@
 </head>
 <body>
 
+  <div class="navibar">
+    <%= link_to 'companies', companies_path %>
+    <%= link_to 'new_company', new_company_path %>
+    <%= link_to 'jobs', jobs_path %>
+    <%= link_to 'new_job', new_job_path %>
+    <%= link_to 'tags', tags_path %>
+    <%= link_to 'new_tag', new_tag_path %>
+  </div>
+
 <%= yield %>
 
 </body>

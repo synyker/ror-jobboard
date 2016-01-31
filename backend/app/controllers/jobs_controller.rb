@@ -30,8 +30,6 @@ class JobsController < ApplicationController
     params.permit(:tag_list)
     @job = Job.new(job_params)
 
-
-
     respond_to do |format|
       if @job.save
 
@@ -43,7 +41,7 @@ class JobsController < ApplicationController
           puts @job.id
           puts tag.id
 
-          JobTag.create(:job_id => @job.id, :tag_id => tag.id)
+          JobTag.find_or_create_by(:job_id => @job.id, :tag_id => tag.id)
         }
 
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
@@ -58,8 +56,22 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+    params.permit(:tag_list)
+
     respond_to do |format|
       if @job.update(job_params)
+
+        tag_names = params[:job][:tag_list].split(/,\s+/)
+        tag_names.each { |name|
+          tag = Tag.find_or_create_by(name: name.strip)
+
+          puts 'TAGIN TIEDOT'
+          puts @job.id
+          puts tag.id
+
+          JobTag.find_or_create_by(:job_id => @job.id, :tag_id => tag.id)
+        }
+
         format.html { redirect_to @job, notice: 'Job was successfully updated.' }
         format.json { render :show, status: :ok, location: @job }
       else

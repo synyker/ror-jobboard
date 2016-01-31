@@ -16,12 +16,13 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.select :company_id, options_from_collection_for_select(@companies, :id, :name) %>
+    <%= f.select :company_id, options_from_collection_for_select(@companies, :id, :name, :selected => f.object.company_id) %>
   </div>
 
   <div class="field">
+    <p>Käytä <a target="_blank" href="https://word2cleanhtml.com/">https://word2cleanhtml.com/</a> descriptionin mailista html muuntamiseen.</p>
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description, :cols => "100", :rows => "18" %>
   </div>
   <div class="field">
     <%= f.label :begin %><br>

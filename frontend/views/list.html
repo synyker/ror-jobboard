@@ -21,9 +21,9 @@
 
         <div class="card-content black-text">
 
-          <p>{{ selectedJob.description }}</p>
+          <div ng-bind-html="selectedJob.description"></div>
         </div>
-        <div class="card-action">
+        <div class="card-action" ng-if="selectedJob.company.url">
           <a class="company-url" href="#" class="black-text">{{ selectedJob.company.website }}</a>
           <a href="#"></a>
         </div>
@@ -37,8 +37,8 @@
   <div>
     <input type="text" class="z-depth-2 job-filter" ng-model="filterJob" placeholder="Type to filter jobs by tags, company name, job title (comma separated)">
 
-    <div class="row" masonry>
-      <div class="col s12 l6 masonry-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-company.sponsored', '-end']" ng-show="selectedJob.id !== job.id">
+    <div class="row job-grid">
+      <div class="col s12 job-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-company.sponsored', '-end']" ng-show="selectedJob.id !== job.id">
 
         <div class="card job" ng-class="{ 'inactive' : isActive(job) }" ng-click="setActiveJob(job)">
 
@@ -62,7 +62,7 @@
             <a class="company-url" href="{{ job.company.website }}" target="_blank" class="black-text" ng-click="$event.stopPropagation();">{{ job.company.website }}</a>
             <a href="#"></a>
           </div>
-          <div class="card-action job-tags">
+          <div class="card-action job-tags" ng-if="job.tags.length > 0">
             <span class="job-tag chip button waves-effect" ng-click="setFilterTag(tag.name); $event.stopPropagation();" ng-repeat="tag in job.tags">{{ tag.name }}</span>
           </div>
         </div>

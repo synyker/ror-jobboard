@@ -1,4 +1,4 @@
-var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'config']);
+var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'ngSanitize', 'config']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 

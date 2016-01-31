@@ -91,6 +91,7 @@ html, body {
       box-shadow: 0 1px 0 0 #1a1a1a;
     }
   }
+
   .job {
     display: block;
 
@@ -155,10 +156,12 @@ html, body {
 
       }
       &.job-tags {
+        /*
         height: 94px;
         overflow: hidden;
         padding: 20px 20px 0 20px;
         margin-bottom: 20px;
+        */
         .job-tag {
           background-color: #fafafa;
           color: #1a1a1a;

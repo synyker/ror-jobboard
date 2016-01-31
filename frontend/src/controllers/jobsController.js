@@ -3,9 +3,10 @@ angular.module('jobboard')
 .controller('JobsCtrl', [
 '$scope',
 '$location',
+'$sce',
 'jobs',
 'jobService',
-function($scope, $location, jobs, jobService) {
+function($scope, $location, $sce, jobs, jobService) {
   $scope.jobs = jobs.jobs;
 
   $scope.$watch(function() { return jobService.getJob() }, function (newVal, oldVal) {

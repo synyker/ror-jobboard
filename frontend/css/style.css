@@ -102,10 +102,12 @@ html, body {
         margin-bottom: 20px;
       */ }
     .jobs-container .job .card-action.job-tags {
+      /*
       height: 94px;
       overflow: hidden;
       padding: 20px 20px 0 20px;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      */ }
       .jobs-container .job .card-action.job-tags .job-tag {
         background-color: #fafafa;
         color: #1a1a1a;
