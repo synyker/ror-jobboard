@@ -9,14 +9,40 @@ angular.module('jobboard')
 function($scope, $location, $sce, jobs, jobService) {
   $scope.jobs = jobs.jobs;
 
+  $scope.sortOptions = jobService.getSortOptions();
+  $scope.trueReverse = true;
+  console.log($scope.sortOptions); 
+
+
+  $scope.$watch(function() { return $scope.sortOptions.sortType }, function (newVal, oldVal) {
+    $scope.trueReverse = $scope.sortOptions.sortType === 'created_at' ? !$scope.sortOptions.reverse : $scope.sortOptions.reverse;
+    jobService.setSortOptions($scope.sortOptions);
+  });
+
+  $scope.$watch(function() { return $scope.sortOptions.reverse }, function (newVal, oldVal) {
+    $scope.trueReverse = $scope.sortOptions.sortType === 'created_at' ? !$scope.sortOptions.reverse : $scope.sortOptions.reverse;
+    jobService.setSortOptions($scope.sortOptions);
+  });
+
+  $scope.$watch(function() { return $scope.sortOptions.showExpired }, function (newVal, oldVal) {
+    jobService.setSortOptions($scope.sortOptions);
+  });
+
+  $scope.$watch(function() { return jobService.getSortOptions() }, function (newVal, oldVal) {
+    $scope.sortOptions = jobService.getSortOptions();
+  });
+
   $scope.$watch(function() { return jobService.getJob() }, function (newVal, oldVal) {
     $scope.selectedJob = jobService.getJob();
+  });
+
+  $scope.$watch(function() { return jobService.getFilter() }, function (newVal, oldVal) {
+    $scope.filterJob = jobService.getFilter();
   });
 
   $scope.clearActiveJob = function() {
     $location.path('/');
     jobService.clearJob();
-    console.log($scope.filterJob);
   }
 
   $scope.setActiveJob = function(job) {
@@ -36,10 +62,10 @@ function($scope, $location, $sce, jobs, jobService) {
 
   $scope.setFilterTag = function(name) {
     if ($scope.filterJob && $scope.filterJob.indexOf(name) == -1) {
-      $scope.filterJob += ', ' + name;
+      jobService.setFilter($scope.filterJob + ', ' + name);
     }
     else if (!$scope.filterJob) {
-      $scope.filterJob = name;
+      jobService.setFilter($scope.filterJob = name);
     }
   }
 

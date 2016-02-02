@@ -2,6 +2,6 @@
 
  angular.module('config', [])
 
-.constant('api', 'http://localhost:3000')
+.constant('api', 'http://guarded-woodland-53389.herokuapp.com')
 
 ;

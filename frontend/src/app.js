@@ -13,7 +13,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
       templateUrl: '/views/list.html',
       controller: 'JobsCtrl',
       resolve: {
-        jobsPromise: ['jobs', function(jobs) {
+        jobsPromise: ['jobService', 'jobs', function(jobService, jobs) {
+          jobService.clearJob();
           return jobs.getAll();
         }]
       }

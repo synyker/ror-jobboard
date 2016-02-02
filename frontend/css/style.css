@@ -67,13 +67,23 @@ html, body {
   background-color: #fafafa;
   padding: 3rem 2rem;
   border-radius: 0 0 5px 5px; }
-  .jobs-container input.job-filter {
+  .jobs-container .filters input.job-filter {
     margin: 0 auto 15px;
     width: 95%;
     display: block; }
-    .jobs-container input.job-filter:focus {
+    .jobs-container .filters input.job-filter:focus {
       border-bottom: 1px solid #1a1a1a;
       box-shadow: 0 1px 0 0 #1a1a1a; }
+  .jobs-container .filters .sort-form {
+    margin: 1rem auto;
+    width: 95%; }
+    .jobs-container .filters .sort-form .sort-title {
+      color: #9e9e9e; }
+    .jobs-container .filters .sort-form label {
+      margin-left: 1rem;
+      padding-left: 28px; }
+    .jobs-container .filters .sort-form .other {
+      margin-left: 2rem; }
   .jobs-container .job {
     display: block;
     background-color: #fff;

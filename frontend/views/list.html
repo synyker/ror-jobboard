@@ -35,10 +35,25 @@
   </div>
 
   <div>
-    <input type="text" class="z-depth-2 job-filter" ng-model="filterJob" placeholder="Type to filter jobs by tags, company name, job title (comma separated)">
+    <div class="filters">
+      <input type="text" class="z-depth-2 job-filter" ng-model="filterJob" placeholder="Type to filter jobs by tags, company name, job title (comma separated)">
+      <form class="sort-form">
+        <span class="radios">
+          <span class="sort-title">Sort by:</span>
+          <input id="sort-created" class="with-gap" type="radio" ng-model="sortOptions.sortType" value="created_at"><label for="sort-created">Latest additions</label>
+          <input id="sort-end" class="with-gap" type="radio" ng-model="sortOptions.sortType" value="end"><label for="sort-end">Earliest deadline</label>
+        </span>
+
+        <span class="other">
+          <input class="filled-in" type="checkbox" id="sort-reverse" ng-model="sortOptions.reverse" /><label for="sort-reverse">Reverse order</label>
+          <input class="filled-in" type="checkbox" id="sort-expired" ng-model="sortOptions.showExpired" /><label for="sort-expired">Show expired jobs</label
+        </span>
+
+      </form>
+    </div>
 
     <div class="row job-grid">
-      <div class="col s12 job-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:['-end', '-company.sponsored']" ng-show="selectedJob.id !== job.id">
+      <div class="col s12 job-brick" ng-repeat="job in jobs | filter:tagFilter | orderBy:sortOptions.sortType:trueReverse" ng-show="selectedJob.id !== job.id && !(isActive(job) && !sortOptions.showExpired)">
 
         <div class="card job" ng-class="{ 'inactive' : isActive(job) }" ng-click="setActiveJob(job)">
 

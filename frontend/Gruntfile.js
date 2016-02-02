@@ -51,21 +51,7 @@ module.exports = function(grunt) {
     bower_concat: {
       all: {
         dest: 'build/_bower.js',
-        cssDest: 'build/_bower.css',
-        bowerOptions: {
-          relative: false
-        },
-        exclude: [
-          'angular-masonry',
-          'jquery-bridget',
-          'desandro-matches-selector',
-          'ev-emitter',
-          'fizzy-ui-utils',
-          'get-size',
-          'imagesloaded',
-          'masonry',
-          'outlayer'
-        ]
+        cssDest: 'build/_bower.css'
       }
     },
     build: {

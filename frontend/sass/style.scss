@@ -102,15 +102,36 @@ html, body {
   padding: 3rem 2rem;
   border-radius: 0 0 5px 5px;
 
-  input.job-filter {
-    margin: 0 auto 15px;
-    width: 95%;
-    display: block;
-    &:focus {
-      border-bottom: 1px solid #1a1a1a;
-      box-shadow: 0 1px 0 0 #1a1a1a;
+  .filters {
+
+    input.job-filter {
+      margin: 0 auto 15px;
+      width: 95%;
+      display: block;
+      &:focus {
+        border-bottom: 1px solid #1a1a1a;
+        box-shadow: 0 1px 0 0 #1a1a1a;
+      }
+    }
+
+    .sort-form {
+      margin: 1rem auto;
+      width: 95%;
+      
+      .sort-title {
+        color: #9e9e9e;
+      }
+      label {
+        margin-left: 1rem;
+        padding-left: 28px;
+      }
+
+      .other {
+        margin-left: 2rem;
+      }
     }
   }
+
 
   .job {
     display: block;
