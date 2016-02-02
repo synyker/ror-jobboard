@@ -11,8 +11,6 @@ function($scope, $location, $sce, jobs, jobService) {
 
   $scope.sortOptions = jobService.getSortOptions();
   $scope.trueReverse = true;
-  console.log($scope.sortOptions); 
-
 
   $scope.$watch(function() { return $scope.sortOptions.sortType }, function (newVal, oldVal) {
     $scope.trueReverse = $scope.sortOptions.sortType === 'created_at' ? !$scope.sortOptions.reverse : $scope.sortOptions.reverse;
