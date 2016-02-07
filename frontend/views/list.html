@@ -12,7 +12,7 @@
           <div class="col l8">
             <p class="card-title company-name">{{ selectedJob.company.name}}</p>
             <p class="card-title job-title">{{ selectedJob.title }}</p>
-            <p class="job-end" ng-if="selectedJob.end">Haku auki <span>{{ selectedJob.end | amDateFormat:'DD.MM.YYYY' }}</span> asti</p>
+            <p class="job-end" ng-if="selectedJob.end">Application deadline <span>{{ selectedJob.end | amDateFormat:'DD.MM.YYYY' }}</span></p>
           </div>
           <div class="col m4 logo-container">
             <img ng-if="selectedJob.company.logo" src="/images/{{ selectedJob.company.logo }}" />
@@ -61,11 +61,11 @@
             <div class="col l8">
               <p class="card-title company-name">{{ job.company.name}}</p>
               <p class="card-title job-title">{{ job.title }}</p>
-              <p class="job-end" ng-if="job.end">Haku auki <span>{{ job.end | amDateFormat:'DD.MM.YYYY' }}</span> asti</p>
-              <p class="job-end" ng-if="!job.end">Haku auki toistaiseksi</p>
+              <p class="job-end" ng-if="job.end">Application deadline <span>{{ job.end | amDateFormat:'DD.MM.YYYY' }}</span></p>
+              <p class="job-end" ng-if="!job.end">Applications accepted until further notice</p>
             </div>
-            <div class="col m4 logo-container">
-              <img ng-if="job.company.logo" src="/images/{{ job.company.logo }}" />
+            <div class="col m4 logo-container" ng-if="job.company.logo">
+              <img src="/images/{{ job.company.logo }}" />
             </div>
           </div>
 
