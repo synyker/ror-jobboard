@@ -1,9 +1,11 @@
+$jobboard-yellow: #ffd966;
+$jobboard-orange: #f08c00;
+$jobboard-black: #1a1a1a;
+
 html, body {
   background-color: #141414;
   background-color: #fafafa;
 }
-
-
 
 .no-margin {
   margin: 0;
@@ -95,6 +97,18 @@ html, body {
     }
 }
 
+[type="checkbox"].filled-in:checked + label:after {
+  border-color: $jobboard-black;
+  background-color: $jobboard-orange;
+}
+[type="radio"].with-gap:checked + label:before {
+  border-color: $jobboard-black;
+}
+[type="radio"].with-gap:checked + label:after {
+  border-color: $jobboard-orange;
+  background-color: $jobboard-orange;
+}
+
 .jobs-container {
   width: 90%;
   margin: 0 auto 6rem;
@@ -128,6 +142,16 @@ html, body {
 
       .other {
         margin-left: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .other, .radios {
+        display: block;
+        margin: 0.5rem auto !important;
+      }
+      .radios {
+        padding-left: 1rem;
       }
     }
   }

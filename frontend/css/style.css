@@ -61,6 +61,17 @@ html, body {
       left: 120px;
       z-index: 100; }
 
+[type="checkbox"].filled-in:checked + label:after {
+  border-color: #1a1a1a;
+  background-color: #f08c00; }
+
+[type="radio"].with-gap:checked + label:before {
+  border-color: #1a1a1a; }
+
+[type="radio"].with-gap:checked + label:after {
+  border-color: #f08c00;
+  background-color: #f08c00; }
+
 .jobs-container {
   width: 90%;
   margin: 0 auto 6rem;
@@ -84,6 +95,12 @@ html, body {
       padding-left: 28px; }
     .jobs-container .filters .sort-form .other {
       margin-left: 2rem; }
+  @media screen and (max-width: 900px) {
+    .jobs-container .filters .other, .jobs-container .filters .radios {
+      display: block;
+      margin: 0.5rem auto !important; }
+    .jobs-container .filters .radios {
+      padding-left: 1rem; } }
   .jobs-container .job {
     display: block;
     background-color: #fff;
