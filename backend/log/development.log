@@ -40124,3 +40124,342 @@ Processing by JobsController#index as JSON
   [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
   Rendered jobs/index.json.jbuilder (21.9ms)
 Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/4.json" for ::1 at 2016-02-08 23:27:12 +0100
+Processing by JobsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mJob Load (0.4ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  Rendered jobs/show.json.jbuilder (2.3ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:27:12 +0100
+Processing by JobsController#index as JSON
+  [1m[35mJob Load (0.1ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 6]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 7]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (14.8ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:27:15 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (20.0ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs/1.json" for ::1 at 2016-02-08 23:28:32 +0100
+Processing by JobsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.5ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  Rendered jobs/show.json.jbuilder (5.1ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:28:32 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (25.2ms)
+Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/jobs/1.json" for ::1 at 2016-02-08 23:28:34 +0100
+Processing by JobsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  Rendered jobs/show.json.jbuilder (3.2ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:28:34 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (22.2ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:29:08 +0100
+Processing by JobsController#index as JSON
+  [1m[35mJob Load (0.4ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.2ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 6]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 7]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (22.9ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/jobs/8.json" for ::1 at 2016-02-08 23:29:08 +0100
+Processing by JobsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/show.json.jbuilder (2.5ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:29:10 +0100
+Processing by JobsController#index as JSON
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 6]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 7]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (18.8ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:01 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.4ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (16.4ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:02 +0100
+Processing by JobsController#index as JSON
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 6]]
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 7]]
+  [1m[35mTag Load (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (16.4ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:19 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.4ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (16.0ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:21 +0100
+Processing by JobsController#index as JSON
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 6]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 7]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (16.9ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:22 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (16.4ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:35 +0100
+Processing by JobsController#index as JSON
+  [1m[35mJob Load (0.4ms)[0m  SELECT "jobs".* FROM "jobs"
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 6]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 7]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (19.3ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/jobs.json" for ::1 at 2016-02-08 23:31:36 +0100
+Processing by JobsController#index as JSON
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?  [["job_id", 7]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "job_tags" ON "tags"."id" = "job_tags"."tag_id" WHERE "job_tags"."job_id" = ?[0m  [["job_id", 8]]
+  Rendered jobs/index.json.jbuilder (17.4ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 1.2ms)
