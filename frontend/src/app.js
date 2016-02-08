@@ -38,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
       templateUrl: 'views/404.html'
     });
 })
-.run(function($rootScope, $state) {
+.run(function($rootScope, $state, $window, $location) {
 
   $window.ga('create', 'UA-73558205-1', 'auto');
 
