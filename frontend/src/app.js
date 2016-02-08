@@ -40,8 +40,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
 })
 .run(function($rootScope, $state) {
 
+  $window.ga('create', 'UA-73558205-1', 'auto');
+
   $rootScope.$on('$stateChangeError', function(event) {
     $state.go('404');
   });
+
+  $rootScope.$on('$stateChangeSuccess', function (event) {
+    $window.ga('send', 'pageview', $location.path());
+  });
+
 
 });
