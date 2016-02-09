@@ -1,6 +1,8 @@
 # app/controllers/users_controller.rb
 class UsersController < ApplicationController
 
+    before_filter :authorize, :except => ['index', 'show']
+
     def new
 
     end
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :active)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
 end

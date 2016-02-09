@@ -64,11 +64,6 @@ class JobsController < ApplicationController
         tag_names = params[:job][:tag_list].split(/,\s+/)
         tag_names.each { |name|
           tag = Tag.find_or_create_by(name: name.strip)
-
-          puts 'TAGIN TIEDOT'
-          puts @job.id
-          puts tag.id
-
           JobTag.find_or_create_by(:job_id => @job.id, :tag_id => tag.id)
         }
 
