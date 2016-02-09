@@ -12,6 +12,8 @@ backend/spec/tmp
 **.orig
 backend/rerun.txt
 backend/pickle-email-*.html
+backend/db/development.sqlite3
+backend/log/development.log
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 backend/config/initializers/secret_token.rb
