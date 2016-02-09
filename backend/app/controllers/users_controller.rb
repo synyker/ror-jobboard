@@ -1,8 +1,6 @@
 # app/controllers/users_controller.rb
 class UsersController < ApplicationController
 
-    before_filter :authorize, :except => ['index', 'show']
-
     def new
 
     end
