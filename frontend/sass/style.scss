@@ -159,6 +159,7 @@ html, body {
   .job {
     display: block;
 
+    cursor: pointer;
     background-color: #fff;
     border: 5px solid #ffd966;
     box-shadow: 0 -3px 15px 5px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -247,8 +248,11 @@ html, body {
       }
     }
 
-    &.single .card-action.job-tags {
-      height: auto;
+    &.single {
+      cursor: auto;
+      .card-action.job-tags {
+        height: auto;
+      }
     }
 
     &.inactive {
