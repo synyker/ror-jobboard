@@ -10,6 +10,13 @@ module.exports = function(grunt) {
         dest: 'js/app.js',
       },
     },
+    uglify: {
+      my_target: {
+        files: {
+          'js/app.min.js': ['js/app.js']
+        }
+      }
+    },
     ngconstant: {
       // Options for all targets
       options: {
@@ -70,11 +77,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-ng-constant');
   grunt.registerTask('default',['watch']);
-  grunt.registerTask('build',['sass', 'ngconstant:development', 'concat', 'bower_concat']);
-  grunt.registerTask('production',['sass', 'ngconstant:production', 'concat', 'bower_concat']);
+  grunt.registerTask('build',['sass', 'ngconstant:development', 'concat', 'uglify', 'bower_concat']);
+  grunt.registerTask('production',['sass', 'ngconstant:production', 'concat', 'uglify', 'bower_concat']);
   grunt.registerTask('heroku', ['production']);
 
 }

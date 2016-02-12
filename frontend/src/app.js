@@ -1,6 +1,11 @@
 var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'ngSanitize', 'config']);
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+app.config([
+'$stateProvider',
+'$urlRouterProvider',
+'$locationProvider',
+'$httpProvider',
+function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
   $locationProvider.html5Mode({
       enabled: true,
@@ -37,8 +42,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
       url: '/404',
       templateUrl: 'views/404.html'
     });
-})
-.run(function($rootScope, $state, $window, $location) {
+}])
+.run(['$rootScope', '$state', '$window', '$location', function($rootScope, $state, $window, $location) {
 
   $window.ga('create', 'UA-73558205-1', 'auto');
 
@@ -51,4 +56,4 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $http
   });
 
 
-});
+}]);

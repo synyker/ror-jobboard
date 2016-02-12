@@ -39,6 +39,7 @@ frontend/.sass-cache/*
 frontend/bower_components/*
 frontend/build
 frontend/js/app.js
+frontend/js/app.min.js
 frontend/src/config.js
 
 # Deployment ignores
