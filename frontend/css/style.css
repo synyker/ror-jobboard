@@ -109,12 +109,18 @@ html, body {
     transition: background-color .3s, box-shadow .3s; }
     .jobs-container .job:hover {
       box-shadow: 0 0px 18px 6px rgba(0, 0, 0, 0.4), 0 2px 10px 0 rgba(0, 0, 0, 0.4); }
-    .jobs-container .job .close-container {
+    .jobs-container .job .close-container, .jobs-container .job .new-tab-button {
       position: absolute;
       top: 5px;
       right: 5px;
-      cursor: hand;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: color .3s; }
+    .jobs-container .job .close-container:hover {
+      color: red; }
+    .jobs-container .job .new-tab-button {
+      color: black; }
+      .jobs-container .job .new-tab-button:hover {
+        color: green; }
     .jobs-container .job .logo-container img {
       max-width: 70%;
       display: block;

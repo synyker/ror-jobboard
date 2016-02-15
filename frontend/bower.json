@@ -21,7 +21,8 @@
     "materialize": "~0.97.5",
     "moment": "~2.11.1",
     "angular-moment": "~0.10.3",
-    "angular-sanitize": "~1.4.9"
+    "angular-sanitize": "~1.4.9",
+    "angular-ui-router-title": "~0.0.4"
   },
   "resolutions": {
     "moment": ">=2.8.0 <2.11.0"

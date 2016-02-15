@@ -58,6 +58,9 @@
         <div class="card job" ng-class="{ 'inactive' : isActive(job) }" ng-click="setActiveJob(job)">
 
           <div class="row no-margin">
+            <a href="/jobs/{{ job.id}}" target="_blank" class="new-tab-button" ng-click="$event.stopPropagation();">
+              <i class="material-icons">open_in_new</i>
+            </a>
             <div class="col l8">
               <p class="card-title company-name">{{ job.company.name}}</p>
               <p class="card-title job-title">{{ job.title }}</p>

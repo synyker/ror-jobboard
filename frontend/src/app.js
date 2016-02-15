@@ -1,4 +1,4 @@
-var app = angular.module('jobboard', ['ui.router', 'angularMoment', 'ngSanitize', 'config']);
+var app = angular.module('jobboard', ['ui.router', 'ui.router.title', 'angularMoment', 'ngSanitize', 'config']);
 
 app.config([
 '$stateProvider',
@@ -21,7 +21,8 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
         jobsPromise: ['jobService', 'jobs', function(jobService, jobs) {
           jobService.clearJob();
           return jobs.getAll();
-        }]
+        }],
+        $title: function() { return 'TKO-äly: Rekry'; }
       }
     })
     .state('single', {
@@ -35,6 +36,10 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
           });
 
           return jobs.getAll();
+        }],
+        $title: ['jobPromise', 'jobService', function(jobPromise, jobService) {
+          var job = jobService.getJob();
+          return 'TKO-äly: Rekry | ' + job.company.name + ': ' + job.title;
         }]
       }
     })

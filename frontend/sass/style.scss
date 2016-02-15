@@ -170,12 +170,21 @@ html, body {
       box-shadow: 0 0px 18px 6px rgba(0, 0, 0, 0.4), 0 2px 10px 0 rgba(0, 0, 0, 0.4);
     }
 
-    .close-container {
+    .close-container, .new-tab-button {
       position: absolute;
       top: 5px;
       right: 5px;
-      cursor: hand;
       cursor: pointer;
+      transition: color .3s;
+    }
+    .close-container:hover {
+      color: red;
+    }
+    .new-tab-button {
+      color: black;
+      &:hover {
+        color: green;
+      }
     }
 
     .logo-container {

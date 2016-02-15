@@ -55,7 +55,8 @@ function($scope, $location, $sce, jobs, jobService) {
   $scope.isActive = function(job) {
     if (!job.end)
       return false;
-    return moment().isAfter(moment(job.end));
+    var end = moment(job.end).add({ 'hours': 23, 'minutes': 59 });
+    return moment().isAfter(moment(end));
   }
 
   $scope.setFilterTag = function(name) {
