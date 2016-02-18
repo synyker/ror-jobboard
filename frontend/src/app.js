@@ -57,7 +57,11 @@ function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
   });
 
   $rootScope.$on('$stateChangeSuccess', function (event) {
-    $window.ga('send', 'pageview', $location.path());
+    if ($location.host() === 'localhost') {
+    }
+    else {
+      $window.ga('send', 'pageview', $location.path());
+    }
   });
 
 

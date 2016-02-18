@@ -52,7 +52,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['**/*.scss', 'src/**/*.js'],
-        tasks: ['sass', 'concat']
+        tasks: ['sass', 'concat', 'uglify']
       }
     },
     bower_concat: {
