@@ -42,7 +42,11 @@ class JobsController < ApplicationController
           puts tag.id
 
           JobTag.find_or_create_by(:job_id => @job.id, :tag_id => tag.id)
+
         }
+
+        #JobMailer.job_mail(@job).deliver_now
+        #send_job_to_irc(@job)
 
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
@@ -51,6 +55,15 @@ class JobsController < ApplicationController
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def send_job_to_irc(job)
+    require "net/http"
+    require "uri"
+
+    uri = URI.parse("http://bot.synyker.eu/job")
+    Net::HTTP.post_form(uri, {"title" => @job.title, "company" => @job.company.name, "id" => @job.id })
+
   end
 
   # PATCH/PUT /jobs/1

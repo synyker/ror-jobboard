@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @job.company.name %>: <%= @job.title %></h1>
+    <p>See full job advertisement at <a href="http://jobs.tko-aly.fi/jobs/<%= @job.id %>">TKO-äly recruitment site</a></p>
+
+    <%= @job.description %>
+    
+  </body>
+</html>
