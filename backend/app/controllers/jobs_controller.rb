@@ -7,7 +7,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.where("end >= ? OR end IS NULL", Date.today)
+    @jobs = Job.where("jobs.end >= ? OR jobs.end IS NULL", Date.today)
   end
 
   # GET /jobs/1
